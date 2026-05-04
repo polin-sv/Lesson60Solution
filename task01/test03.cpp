@@ -8,16 +8,19 @@ int main() {
 	cin >> n >> m;
 
 	int** matrix = new int* [n];
+	int* sizes = new int[n];
 
 	for (int i = 0; i < n; i++)
 	{
-		matrix[i] = new int[m];
+		sizes[i] = rand() % m + 2;
+		matrix[i] = new int[sizes[i]];
 	}
 
 	for (int i = 0; i < n; i++)
 	{
-		for (int j = 0; j < m; j++) {
-			cout << matrix[i][ j]<< " ";
+		for (int j = 0; j < sizes[i]; j++) {
+			matrix[i][j] = rand() % 100;
+			cout << matrix[i][j] << " ";
 		}
 
 		cout << "\n";
